@@ -19,7 +19,7 @@ body {
   color: #2c2c2c;
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
-  background: #f3f6ff;
+  background: #00000009;
 }
 
 a {
@@ -138,7 +138,7 @@ h2 {
   z-index: 1;
   opacity: 0;
   transition: 0.5s;
-  background: rgba(255, 111, 97, 0.7);
+  /* background: rgba(255, 111, 97, 0.7); */
   border-radius: 4px;
 }
 
@@ -479,7 +479,7 @@ h2 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 111, 97, 0.7);
+  /* background: rgba(255, 111, 97, 0.7); */
   transition: all 0.3s;
   z-index: 1;
 }
@@ -494,6 +494,8 @@ h2 {
 
 .header-slider .header-slider-caption .btn {
   border-color: #ffffff;
+  background-color: #16161600;
+  color: white;
 }
 
 .header-slider .header-slider-caption .btn i {
@@ -532,7 +534,7 @@ h2 {
   height: 100%;
   display: flex;
   align-items: center;
-  background: rgba(255, 111, 97, 0.7);
+  /* background: rgba(255, 111, 97, 0.7); */
   transition: all 0.3s;
   opacity: 0;
 }
@@ -563,13 +565,6 @@ h2 {
   margin-bottom: 30px !important;
 }
 
-
-
-
-
-
-
-
 /**********************************/
 /********* Breadcrumb CSS *********/
 /**********************************/
@@ -587,7 +582,7 @@ h2 {
 /**********************************/
 /********** Category CSS **********/
 /**********************************/
-.category {
+/* .category {
   position: relative;
   padding: 0 15px;
   margin-bottom: 30px;
@@ -655,41 +650,108 @@ h2 {
 
 .category .category-name:hover p {
   margin: 0;
+} */
+
+.all-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.category-section h2 {
+  margin-bottom: 15px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #333;
+  text-transform: uppercase;
+  justify-self: center;
+  padding: 30px 0px 15px 0px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.category-grid div {
+  overflow: hidden; /* important to prevent image overflow */
+}
+
+.category-grid img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+  transition: transform 1s ease-in;
+}
+
+.category-grid img:hover {
+  transform: scale(1.08); /* subtle zoom */
+}
+.category-see-more {
+  text-align: center;
+  border-radius: 10px;
+  border: 2px solid #2c2c2c;
+  background-color: transparent;
+  font-size: 20px;
+  padding: 10px 30px 10px 30px;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /**********************************/
 /*********** Feature CSS **********/
 /**********************************/
 .feature {
-  position: relative;
-}
-
-.feature .feature-col {
-  margin-bottom: 30px;
-}
-
-.feature .feature-content {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  padding: 30px 15px;
-  text-align: center;
   background: #ffffff;
+  /* padding: 60px 0; */
 }
 
-.feature .feature-content i {
-  color: #e63946;
-  font-size: 60px;
-  margin-bottom: 30px;
+.feature-col {
+  margin-bottom: 40px;
+  margin-top: 40px;
 }
 
-.feature .feature-content h2 {
-  font-size: 18px;
+.feature-content {
+  text-align: center;
+  padding: 35px 25px;
+  border-radius: 14px;
+  background: #f9f9f9;
+  transition: all 0.35s ease;
 }
 
-.feature .feature-content p {
+.feature-content i {
+  font-size: 38px;
+  color: #ff6f61;
+  margin-bottom: 18px;
+}
+
+.feature-content h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.feature-content p {
   font-size: 15px;
+  color: #666;
   margin: 0;
+}
+
+.feature-content:hover {
+  background: #ffffff;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.08);
+  transform: translateY(-8px);
 }
 
 /**********************************/
@@ -815,8 +877,9 @@ h2 {
 
 .product-item .product-price {
   padding: 20px;
-  background: #000000;
+  background: white;
   transition: all 0.3s;
+  /* border: 1px solid red; */
 }
 
 .product-item:hover .product-price {
@@ -825,7 +888,7 @@ h2 {
 
 .product-item .product-price h3 {
   display: inline-block;
-  color: #ffffff;
+  color: #2c2c2c;
   margin: 0;
 }
 
@@ -833,11 +896,17 @@ h2 {
   font-size: 16px;
 }
 
+.product-item .product-price a {
+  font-size: 14px;
+  max-width: 180px;
+}
+
 .product-item .product-price .btn {
   float: right;
   border: none;
   color: #000000;
-  background: #e63946;
+  /* background: #e63946; */
+  border: 1.8px solid #d62828;
 }
 
 .product-item:hover .product-price .btn,
@@ -1923,61 +1992,77 @@ h2 {
 /********* Newsletter CSS *********/
 /**********************************/
 .newsletter {
-  position: relative;
-  padding: 30px 0;
-  background: #e63946;
+  padding: 50px 0;
+  background: linear-gradient(135deg, #e63946, #d62828);
 }
 
-.newsletter h1 {
+.newsletter h2 {
   color: #ffffff;
-  font-size: 30px;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.newsletter p {
+  color: rgba(255, 255, 255, 0.85);
   margin: 0;
+  font-size: 15px;
 }
 
-.newsletter .form {
+.newsletter-form {
   position: relative;
-  max-width: 400px;
-  margin: 0 0 0 auto;
+  max-width: 420px;
+  margin-left: auto;
+  display: flex;
+  background: #ffffff;
+  border-radius: 50px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-.newsletter .form input {
-  width: 100%;
-  height: 40px;
-  padding: 0 15px;
-  color: #666666;
-  border: 1px solid #ffffff;
-  border-radius: 4px;
-}
-
-.newsletter .form button {
-  position: absolute;
-  width: 80px;
-  height: 40px;
-  top: 0;
-  right: 0;
-  padding: 0 15px;
+.newsletter-form input {
+  flex: 1;
+  height: 50px;
+  padding: 0 20px;
   border: none;
+  font-size: 14px;
+  outline: none;
+}
+
+.newsletter-form input::placeholder {
+  color: #999999;
+}
+
+.newsletter-form button {
+  padding: 0 28px;
   background: #e63946;
   color: #ffffff;
-  border: 1px solid #ffffff;
-  border-radius: 0 4px 4px 0;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-.newsletter .form button:hover {
-  color: #e63946;
+.newsletter-form button:hover {
   background: #000000;
 }
 
+.newsletter-form input:focus {
+  outline: none;
+}
+
+/* Mobile Optimization */
 @media (max-width: 767.98px) {
   .newsletter {
     text-align: center;
   }
 
-  .newsletter h1 {
+  .newsletter p {
     margin-bottom: 20px;
   }
 
-  .newsletter .form {
+  .newsletter-form {
     margin: 0 auto;
   }
 }
@@ -1985,7 +2070,7 @@ h2 {
 /**********************************/
 /*********** Brand CSS ************/
 /**********************************/
-.brand {
+/* .brand {
   position: relative;
   margin-bottom: 30px;
   padding: 30px 0;
@@ -2058,13 +2143,20 @@ h2 {
 
 .brand .slick-next::before {
   content: "\f105";
-}
+} */
 
 /**********************************/
 /*********** Review CSS ***********/
 /**********************************/
+.customer-review-text-div{
+  width: 100%;
+  text-align: center;
+   margin-bottom: 30px;
+  margin-top: 30px;
+}
 .review {
-  margin-bottom: 30px;
+  margin-bottom: 60px;
+  margin-top: 30px;
 }
 
 .review .review-slider {
